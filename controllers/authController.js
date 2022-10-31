@@ -68,8 +68,10 @@ const LoginUser = async (req, res) => {
     user.isActive = undefined;
 
     res.cookie("token", accessToken, {
+      expires: new Date(Date.now() +  8 * 3600000),
       httpOnly: true,
-      secure: true, // only works on https // for production
+      secure: true,
+      // only works on https // for production
       //Send User as Json Response
     });
     res.json(user);
