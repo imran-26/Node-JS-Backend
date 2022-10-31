@@ -69,7 +69,7 @@ const LoginUser = async (req, res) => {
 
     res.cookie("token", accessToken, {
       httpOnly: true,
-      // secure: true, // only works on https // for production
+      secure: true, // only works on https // for production
       //Send User as Json Response
     });
     res.json(user);
