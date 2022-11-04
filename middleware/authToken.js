@@ -6,12 +6,15 @@ export const validToken = (req) => {
 
   if (req.headers.cookie) {
     // const tokenCookie = req.headers.cookie.split(";")[0].toString();
-    var match = req.headers.cookie.match(new RegExp("(^| )" + "token" + "=([^;]+)"));
-    if (match) {
-      token = match[2];
-    } else {
-      console.log("--smt went wrong--");
-    }
+    // var match = req.headers.cookie.match(new RegExp("(^| )" + "token" + "=([^;]+)"));
+    
+//     if (match) {
+//       token = match[2];
+//     } else {
+//       console.log("--smt went wrong--");}
+   
+    const { authorization = "" } = req.headers;
+    const token = authorization.split(" ").pop() || "";
     console.log("Req Headers: ", token);
     // token = tokenCookie.split("=")[1];
     const decoded = jwt.verify(token, process.env.JWT_ACCESS_TOKEN);
