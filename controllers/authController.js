@@ -72,9 +72,7 @@ const LoginUser = async (req, res) => {
       secure: true,
       expires: new Date(Date.now() +  8 * 3600000),
       sameSite: "none",
-      domain: "frontendbrandr.vercel.app"
-      // only works on https // for production
-      //Send User as Json Response
+      domain: "*.onrender.com"
     });
     res.json(user);
   } catch (error) {
