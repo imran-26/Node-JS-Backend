@@ -74,7 +74,7 @@ const LoginUser = async (req, res) => {
       sameSite: "none",
       domain: "*.onrender.com"
     });
-    res.json(user);
+    res.json({user, accessToken});
   } catch (error) {
     console.log(error);
     return res.status(400).send("Error. Please Try Again");
