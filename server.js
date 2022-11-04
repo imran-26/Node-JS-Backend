@@ -17,7 +17,7 @@ const DB_URI = process.env.MONGO_URI;
 // Middleware
 app.use(
   cors({
-    origin: "https://frontendbrandr.vercel.app",
+    origin: "https://clientnextnodeproject.onrender.com",
     credentials: true,
   }),
 );
